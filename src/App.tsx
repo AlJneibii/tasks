@@ -3,7 +3,8 @@ import "./App.css";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const imgSrc = "https://via.placeholder.com/300x180.png?text=Hello+World";
+const imgSrc =
+    "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg";
 
 export default function App(): JSX.Element {
     return (
@@ -13,7 +14,7 @@ export default function App(): JSX.Element {
             </header>
 
             <div style={{ marginTop: 12 }}>
-                <img src={imgSrc} alt="Demo image for the app" />
+                <img src={imgSrc} alt="UAE Flag" />
             </div>
 
             <div style={{ marginTop: 12 }}>
