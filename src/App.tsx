@@ -7,6 +7,7 @@ const imgSrc =
     "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg";
 
 export default function App() {
+
     return (
         <div className="App">
             <header className="App-header">
