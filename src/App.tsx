@@ -1,4 +1,5 @@
 import React from "react";
+import type { JSX } from "react";
 import "./App.css";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
@@ -7,24 +8,26 @@ import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
 
-function App(): JSX.Element {
+export function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Hamad AlJneibi CISC275</h1>
+                <h1>CISC275</h1>
             </header>
-            <hr></hr>
-            <Counter></Counter>
             <hr />
-            <RevealAnswer></RevealAnswer>
+            <Counter />
             <hr />
-            <StartAttempt></StartAttempt>
+            <RevealAnswer />
             <hr />
-            <TwoDice></TwoDice>
+            <ChangeType />
             <hr />
-            <ChangeType></ChangeType>
+            <StartAttempt />
             <hr />
-            <CycleHoliday></CycleHoliday>
+            <TwoDice />
+            <hr />
+            <CycleHoliday />
         </div>
     );
 }
+
+export default App;
