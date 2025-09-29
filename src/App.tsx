@@ -7,6 +7,10 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
+import { DoubleHalf } from "./bad-components/DoubleHalf";
+import { ColoredBox } from "./bad-components/ColoredBox";
+import { ChooseTeam } from "./bad-components/ChooseTeam";
+import { ShoveBox } from "./bad-components/ShoveBox";
 
 export function App(): JSX.Element {
     return (
@@ -14,6 +18,16 @@ export function App(): JSX.Element {
             <header className="App-header">
                 <h1>CISC275</h1>
             </header>
+            <hr />
+            <DoubleHalf />
+            <hr />
+            <ChooseTeam />
+            <hr />
+            <ColoredBox />
+            <hr />
+            <ShoveBox />
+            <hr />
+            <Counter />
             <hr />
             <Counter />
             <hr />
