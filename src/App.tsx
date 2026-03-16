@@ -19,7 +19,7 @@ export function App(): JSX.Element {
                 <h1>CISC275</h1>
             </header>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <DoubleHalf />
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
