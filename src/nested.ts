@@ -1,5 +1,6 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
+import { makeBlankQuestion, duplicateQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -196,7 +197,20 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType,
 ): Question[] {
-    return [];
+    return questions.map((question: Question): Question => {
+        if (question.id !== targetId) {
+            return question;
+        }
+
+        return {
+            ...question,
+            type: newQuestionType,
+            options:
+                newQuestionType === "multiple_choice_question" ?
+                    [...question.options]
+                :   [],
+        };
+    });
 }
 
 /**
@@ -215,7 +229,26 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    return questions.map((question: Question): Question => {
+        if (question.id !== targetId) {
+            return question;
+        }
+
+        let newOptions: string[];
+        if (targetOptionIndex === -1) {
+            newOptions = [...question.options, newOption];
+        } else {
+            newOptions = question.options.map(
+                (option: string, index: number): string =>
+                    index === targetOptionIndex ? newOption : option,
+            );
+        }
+
+        return {
+            ...question,
+            options: newOptions,
+        };
+    });
 }
 
 /***
@@ -229,5 +262,14 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number,
 ): Question[] {
-    return [];
+    const result: Question[] = [];
+
+    for (const question of questions) {
+        result.push(question);
+        if (question.id === targetId) {
+            result.push(duplicateQuestion(newId, question));
+        }
+    }
+
+    return result;
 }
