@@ -1,4 +1,5 @@
 import React from "react";
+import type { JSX } from "react";
 import "./App.css";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
@@ -11,14 +12,14 @@ import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 
-function App(): React.JSX.Element {
+export function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
+                <h1>CISC275</h1>
             </header>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <DoubleHalf />
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
@@ -28,15 +29,15 @@ function App(): React.JSX.Element {
             <hr></hr>
             <Counter></Counter>
             <hr />
-            <RevealAnswer></RevealAnswer>
+            <RevealAnswer />
             <hr />
-            <StartAttempt></StartAttempt>
+            <ChangeType />
             <hr />
-            <TwoDice></TwoDice>
+            <StartAttempt />
             <hr />
-            <ChangeType></ChangeType>
+            <TwoDice />
             <hr />
-            <CycleHoliday></CycleHoliday>
+            <CycleHoliday />
         </div>
     );
 }
