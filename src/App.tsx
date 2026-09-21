@@ -23,7 +23,6 @@ function App(): React.JSX.Element {
                 Hamad AlJneibi UD CISC275 with React Hooks and TypeScript
             </header>
             <hr></hr>
-            {<DoubleHalf></DoubleHalf>}
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
             <hr></hr>
             <GiveAttempts></GiveAttempts>
